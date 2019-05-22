@@ -5,7 +5,6 @@ import { FETCH_PRODUCTS_FAIL, FETCH_PRODUCTS_REQUEST, FETCH_PRODUCTS_SUCCESS } f
 function* handleProductsFetch() {
   try {
     const { data } = yield call(api.getProducts);
-    console.log(data);
     yield put({
       type: FETCH_PRODUCTS_SUCCESS,
       payload: { data },

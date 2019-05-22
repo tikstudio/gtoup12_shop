@@ -1,32 +1,37 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import stripHtml from 'string-strip-html';
 import { connect } from 'react-redux';
 import { fetchProducts } from './store/actions/product';
 
 class App extends Component {
   static propTypes = {
-    message: PropTypes.string,
+    products: PropTypes.array,
     fetchProducts: PropTypes.func.isRequired,
   }
 
   static defaultProps = {
-    message: '',
+    products: [],
   }
 
   componentDidMount() {
     this.props.fetchProducts();
   }
 
-  test = () => {
-    console.log(11111);
-  }
 
   render() {
-    const { message } = this.props;
+    const { products } = this.props;
     return (
       <div>
         <h1>test</h1>
-        {message}
+        <ul>
+          {products.map((p) => (
+            <li key={p.id}>
+              {stripHtml(p.description)}
+              <div dangerouslySetInnerHTML={{ __html: p.description }} />
+            </li>
+          ))}
+        </ul>
       </div>
     );
   }
