@@ -9,10 +9,10 @@ import reducers from './store/reducers';
 import watchers from './store/sagas';
 import './assets/style/style1.css';
 
-import './assets/Styles/2.css'
-import './assets/Styles/4.css'
-import './assets/Styles/6.css'
-import './assets/Styles/8.css'
+import './assets/Styles/style2.css'
+import './assets/Styles/style4.css'
+import './assets/Styles/style6.css'
+import './assets/Styles/style8.css'
 
 
 
