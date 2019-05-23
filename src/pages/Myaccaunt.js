@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class Footer extends Component {
+class Myaccaunt extends Component {
   render() {
     return (
       <div>
-          AAaa
+        <h1>nyacc</h1>
       </div>
     );
   }
 }
 
-export default Footer;
+export default Myaccaunt;

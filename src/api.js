@@ -7,10 +7,12 @@ axios.defaults.baseURL = 'https://localhost/group12';
 
 axios.interceptors.request.use((config) => {
   const s = config.url.indexOf('?') > -1 ? '&' : '?';
+  // eslint-disable-next-line no-multi-assign,no-param-reassign
   config.url = config.url += `${s}consumer_key=${CONSUMER_KEY}&consumer_secret=${CONSUMER_SECRET}`;
   return config;
 }, error => Promise.reject(error));
 
+// eslint-disable-next-line import/prefer-default-export
 export function getProducts() {
   return axios.get(`/wp-json/wc/v3/products`);
 }

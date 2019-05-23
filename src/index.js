@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-
 import * as serviceWorker from './serviceWorker';
 import App from './App';
 import reducers from './store/reducers';
 import watchers from './store/sagas';
+import './assets/style/style1.css';
 
 import './assets/Styles/2.css'
 import './assets/Styles/4.css'
