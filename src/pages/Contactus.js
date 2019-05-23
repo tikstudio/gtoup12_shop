@@ -76,14 +76,11 @@ class ContactUs extends Component {
                       >
                         <label
                           className="wpforms-field-label"
-                          htmlFor="wpforms-104-field_1"
-                        >
-Email
+                          htmlFor="wpforms-104-field_1">
+                                 Email
                           {' '}
-                          <span
-                            className="wpforms-required-label"
-                          >
-*
+                          <span className="wpforms-required-label">
+                                *
                           </span>
                         </label>
                         <input
@@ -100,8 +97,7 @@ Email
                         data-field-id="2"
                       >
                         <label className="wpforms-field-label" htmlFor="wpforms-104-field_2">
-Comment
-                        or Message
+                        Comment or Message
                           <span className="wpforms-required-label">*</span>
                         </label>
                         <textarea
@@ -116,8 +112,7 @@ Comment
                       <label
                         htmlFor="wpforms-104-field-hp"
                         className="wpforms-field-label"
-                      >
-Phone
+                      >Phone
                       </label>
                       <input type="text" name="wpforms[hp]" id="wpforms-104-field-hp" className="wpforms-field-medium" />
                     </div>

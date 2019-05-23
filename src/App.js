@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Home from './pages/Home';
@@ -9,20 +9,8 @@ import Cart from './pages/Cart';
 
 
 class App extends Component {
-  static propTypes = {
-
-  };
-
   static defaultProps = {
     message: '',
-  };
-
-  componentDidMount() {
-
-  }
-
-  test = () => {
-
   };
 
   render() {
@@ -33,6 +21,7 @@ class App extends Component {
             <Route path="/cart" component={Cart} />
             <Route path="/contact-us" component={ContactUs} />
             <Route path="/myAccount" component={MyAccount} />
+            <Route path="/my-account" component={MyAccount} />
             <Route path="/" exact component={Home} />
           </Switch>
         </BrowserRouter>
