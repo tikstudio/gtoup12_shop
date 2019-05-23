@@ -10,8 +10,7 @@ import Cart from './pages/Cart';
 
 class App extends Component {
   static propTypes = {
-    message: PropTypes.string,
-    fetchProducts: PropTypes.func.isRequired,
+
   };
 
   static defaultProps = {
@@ -19,12 +18,8 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.props.fetchProducts();
   }
 
-  test = () => {
-    console.log(11111);
-  };
 
   render() {
     return (
@@ -33,7 +28,7 @@ class App extends Component {
           <Switch>
             <Route path="/cart" component={Cart} />
             <Route path="/contact-us" component={ContactUs} />
-            <Route path="/myaccount" component={MyAccount} />
+            <Route path="/my-account" component={MyAccount} />
             <Route path="/" exact component={Home} />
           </Switch>
         </BrowserRouter>
