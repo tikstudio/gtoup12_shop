@@ -1,37 +1,42 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import stripHtml from 'string-strip-html';
 import { connect } from 'react-redux';
 import { fetchProducts } from './store/actions/product';
+import {BrowserRouter, Route, Switch,} from "react-router-dom";
+
+import Home from '../src/pages/Home';
+import ContactUs from '../src/pages/ContactUs';
+import MyAccount from '../src/pages/MyAccount';
 
 class App extends Component {
   static propTypes = {
-    products: PropTypes.array,
+    message: PropTypes.string,
     fetchProducts: PropTypes.func.isRequired,
-  }
+  };
 
   static defaultProps = {
-    products: [],
-  }
+    message: '',
+  };
 
   componentDidMount() {
     this.props.fetchProducts();
   }
 
+  test = () => {
+    console.log(11111);
+  };
 
   render() {
-    const { products } = this.props;
+
     return (
       <div>
-        <h1>test</h1>
-        <ul>
-          {products.map((p) => (
-            <li key={p.id}>
-              {stripHtml(p.description)}
-              <div dangerouslySetInnerHTML={{ __html: p.description }} />
-            </li>
-          ))}
-        </ul>
+        <BrowserRouter>
+          <Switch>
+            <Route path="/contactus" component={ContactUs}/>
+            <Route path="/myaccount" component={MyAccount}/>
+            <Route path="/" exact component={Home}/>
+          </Switch>
+        </BrowserRouter>
       </div>
     );
   }
