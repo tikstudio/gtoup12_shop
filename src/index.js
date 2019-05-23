@@ -16,6 +16,13 @@ import './assets/style/style11.css';
 import './assets/style/style13.css';
 import './assets/style/style15.css';
 
+import './assets/Styles/2.css'
+import './assets/Styles/4.css'
+import './assets/Styles/6.css'
+import './assets/Styles/8.css'
+
+
+
 const sagaMiddleware = createSagaMiddleware();
 
 // eslint-disable-next-line no-underscore-dangle
