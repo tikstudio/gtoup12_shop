@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
   render() {
@@ -15,16 +16,15 @@ class Header extends Component {
                   <div className="shop_isle_header_title">
                     <div className="shop-isle-header-title-inner">
                       <h1 className="site-title">
-                        <a
-                          href="https://tempwp.orderwebsitenow.com/"
+                        <Link
+                          to="/"
                           title="Group12 Shop"
-                          rel="home"
                         >
-Group12 Shop
-                        </a>
+                            Group12 Shop
+                        </Link>
                       </h1>
                       <p className="site-description">
-                        <a href="https://tempwp.orderwebsitenow.com/" title="" rel="home" />
+                        <Link to="/" title="" rel="home" />
                       </p>
 
                     </div>
