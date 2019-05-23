@@ -78,10 +78,10 @@ My account
 
                   <div className="navbar-cart-inner">
 
-                    <a href="https://tempwp.orderwebsitenow.com/cart/" title="View your shopping cart" className="cart-contents">
+                    <Link to="/cart" title="View your shopping cart" className="cart-contents">
                       <span className="icon-basket" />
                       <span className="cart-item-number">0</span>
-                    </a>
+                    </Link>
 
 
                   </div>

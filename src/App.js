@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import ContactUs from './pages/ContactUs';
 import MyAccount from './pages/MyAccount';
+import Cart from './pages/Cart';
 
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <Switch>
+            <Route path="/cart" component={Cart} />
             <Route path="/contact-us" component={ContactUs} />
             <Route path="/myaccount" component={MyAccount} />
             <Route path="/" exact component={Home} />
