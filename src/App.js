@@ -1,53 +1,23 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import stripHtml from 'string-strip-html';
-import { connect } from 'react-redux';
-import { fetchProducts } from './store/actions/product';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Home from './pages/Home';
+import Contactus from './pages/Contactus';
+import Myaccaunt from './pages/Myaccaunt';
 
+// eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
-  static propTypes = {
-    products: PropTypes.array,
-    fetchProducts: PropTypes.func.isRequired,
-  }
-
-  static defaultProps = {
-    products: [],
-  }
-
-  componentDidMount() {
-    this.props.fetchProducts();
-  }
-
-
   render() {
-    const { products } = this.props;
     return (
-      <div>
-        <h1>test</h1>
-        <ul>
-          {products.map((p) => (
-            <li key={p.id}>
-              {stripHtml(p.description)}
-              <div dangerouslySetInnerHTML={{ __html: p.description }} />
-            </li>
-          ))}
-        </ul>
-      </div>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          {/* eslint-disable-next-line no-undef */}
+          <Route path="/Contactus" exact component={Contactus} />
+          <Route path="/Myaccaunt" exact component={Myaccaunt} />
+        </Switch>
+      </BrowserRouter>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  products: state.product.products,
-});
-
-const mapDispatchToProps = {
-  fetchProducts,
-};
-
-const Container = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(App);
-
-export default Container;
+export default App;
