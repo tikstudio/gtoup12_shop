@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import ContactUs from './ContactUs';
+import ContactUs from './Contactus';
+import MyAccount from './MyAccount';
 
 
 class Home extends Component {
@@ -11,7 +12,7 @@ class Home extends Component {
         <Header />
         <Footer />
         <ContactUs />
-
+        <MyAccount />
 
       </div>
     );
