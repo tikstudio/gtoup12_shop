@@ -48,10 +48,10 @@ Home
                         </a>
                       </li>
                       <li id="menu-item-106" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-106">
-                        <a href="https://tempwp.orderwebsitenow.com/contact-us/">
+                        <Link to="/contact-us">
                           <i className="obfx-menu-icon dashicons dashicons-email" />
 Contact Us
-                        </a>
+                        </Link>
                       </li>
                       <li id="menu-item-48" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-48">
                         <a href="https://tempwp.orderwebsitenow.com/my-account/">
