@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import ContactUs from './Contactus';
+import MyAccount from './MyAccount';
 
 
 class Home extends Component {
@@ -384,8 +386,7 @@ AMD
                               aria-label="Add “Patient Ninja” to your cart"
                               rel="nofollow"
                             >
-Add to
-                                                  cart
+                              Add to cart
                             </a>
                           </div>
                         </div>
@@ -395,10 +396,8 @@ Add to
                         <span className="woocommerce-Price-amount amount">
                           <span
                             className="woocommerce-Price-currencySymbol"
-                          >
-AMD
-                          </span>
-35.00
+                          >AMD
+                          </span>35.00
                         </span>
                       </span>
                     </a>
@@ -439,8 +438,7 @@ AMD
                               aria-label="Add “Premium Quality” to your cart"
                               rel="nofollow"
                             >
-Add to
-                                                  cart
+        Add to cart
                             </a>
                           </div>
                         </div>
@@ -929,6 +927,9 @@ AMD40
 
 
         <Footer />
+
+        <ContactUs />
+        <MyAccount />
 
 
       </div>

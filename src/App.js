@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Home from './pages/Home';
-import ContactUs from './pages/ContactUs';
+import ContactUs from './pages/Contactus';
 import MyAccount from './pages/MyAccount';
 import Cart from './pages/Cart';
 
@@ -18,6 +18,7 @@ class App extends Component {
   };
 
   componentDidMount() {
+
   }
 
 

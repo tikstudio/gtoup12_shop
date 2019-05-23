@@ -7,18 +7,24 @@ import * as serviceWorker from './serviceWorker';
 import App from './App';
 import reducers from './store/reducers';
 import watchers from './store/sagas';
+
+//
 // import './assets/style/style1.css';
-// import './assets/style/style3.css';
-// import './assets/style/style5.css';
-// import './assets/style/style7.css';
-// import './assets/style/style9.css';
-// import './assets/style/style11.css';
-// import './assets/style/style13.css';
-// import './assets/style/style15.css';
 // import './assets/style/style2.css';
+// import './assets/style/style3.css';
 // import './assets/style/style4.css';
+// import './assets/style/style5.css';
 // import './assets/style/style6.css';
+// import './assets/style/style7.css';
 // import './assets/style/style8.css';
+// import './assets/style/style9.css';
+// import './assets/style/style10.css';
+// import './assets/style/style11.css';
+// import './assets/style/style12.css';
+// import './assets/style/style13.css';
+// import './assets/style/style14.css';
+// import './assets/style/style15.css';
+// import './assets/style/style16.css';
 
 
 const sagaMiddleware = createSagaMiddleware();

@@ -42,22 +42,22 @@ class Header extends Component {
 
                     <ul id="menu-menu-1" className="nav navbar-nav navbar-right">
                       <li id="menu-item-44" className="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-44">
-                        <a href="https://tempwp.orderwebsitenow.com/" aria-current="page">
+                        <Link to="/" aria-current="page">
                           <i className="obfx-menu-icon fa fa-home" />
-Home
-                        </a>
+                           Home
+                        </Link>
                       </li>
                       <li id="menu-item-106" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-106">
                         <Link to="/contact-us">
                           <i className="obfx-menu-icon dashicons dashicons-email" />
-Contact Us
+                             Contact Us
                         </Link>
                       </li>
                       <li id="menu-item-48" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-48">
-                        <a href="https://tempwp.orderwebsitenow.com/my-account/">
+                        <Link to="/my-account">
                           <i className="obfx-menu-icon fa fa-user" />
-My account
-                        </a>
+                              My account
+                        </Link>
                       </li>
                     </ul>
                   </div>
@@ -82,17 +82,11 @@ My account
                       <span className="icon-basket" />
                       <span className="cart-item-number">0</span>
                     </Link>
-
-
                   </div>
-
                 </div>
-
               </div>
             </div>
-
           </nav>
-
         </header>
       </div>
     );
