@@ -5,7 +5,6 @@ import Footer from '../components/Footer';
 import ContactUs from './Contactus';
 import MyAccount from './MyAccount';
 
-
 class Home extends Component {
   render() {
     return (
@@ -92,7 +91,7 @@ class Home extends Component {
                               aria-label="Add “Flying Ninja” to your cart"
                               rel="nofollow"
                             >
-Add to
+     Add to
                                                   cart
                             </a>
                           </div>
@@ -104,12 +103,9 @@ Add to
                       <span className="price">
                         <del>
                           <span
-                            className="woocommerce-Price-amount amount"
-                          >
+                            className="woocommerce-Price-amount amount">
                             <span
-                              className="woocommerce-Price-currencySymbol"
-                            >
-AMD
+                              className="woocommerce-Price-currencySymbol">AMD
                             </span>
 15.00
                           </span>
@@ -802,7 +798,6 @@ AMD
                 <span className="shop-isle-sidebar-close">
                   <span className="icon-close" />
                 </span>
-
                 <aside id="secondary" className="widget-area" role="complementary">
                   <div
                     id="woocommerce_layered_nav-2"

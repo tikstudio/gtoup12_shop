@@ -6,6 +6,9 @@ import Home from './pages/Home';
 import ContactUs from './pages/Contactus';
 import MyAccount from './pages/MyAccount';
 import Cart from './pages/Cart';
+import ExclusiveProducts from './components/widgets/ExclusiveProducts';
+import RelatedProducts from './components/widgets/RelatedProducts';
+import SingleProduct from './components/widgets/SingleProduct';
 
 
 class App extends Component {
@@ -18,6 +21,9 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <Switch>
+            <Route path="/exclusiveproducts" component={ExclusiveProducts} />
+            <Route path="/relatedproducts" component={RelatedProducts} />
+            <Route path="/singleproduct" component={SingleProduct} />
             <Route path="/cart" component={Cart} />
             <Route path="/contact-us" component={ContactUs} />
             <Route path="/myAccount" component={MyAccount} />

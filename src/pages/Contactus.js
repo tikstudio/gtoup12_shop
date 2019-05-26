@@ -37,9 +37,7 @@ class ContactUs extends Component {
                         data-field-id="0"
                       >
                         <label className="wpforms-field-label" htmlFor="wpforms-104-field_0">
-                          <span
-                            className="wpforms-required-label"
-                          >
+                          <span className="wpforms-required-label">
                           </span>
                         </label>
                         <div className="wpforms-field-row wpforms-field-medium">
@@ -111,8 +109,8 @@ class ContactUs extends Component {
                     <div className="wpforms-field wpforms-field-hp">
                       <label
                         htmlFor="wpforms-104-field-hp"
-                        className="wpforms-field-label"
-                      >Phone
+                        className="wpforms-field-label">
+                        Phone
                       </label>
                       <input type="text" name="wpforms[hp]" id="wpforms-104-field-hp" className="wpforms-field-medium" />
                     </div>

@@ -1,25 +1,44 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Cart extends Component {
   render() {
     return (
-      <div>
-        <header className="woocommerce-products-header">
-          <section
-            className="woocommerce-page-title page-header-module module bg-dark"
-            data-background="https://tempwp.orderwebsitenow.com/wp-content/themes/shop-isle/assets/images/header.jpg"
-            style={{ backgroundImage: 'url(&quot;https://tempwp.orderwebsitenow.com/wp-content/themes/shop-isle/assets/images/header.jpg&quot;)' }}
-          >
-            <div className="container">
-              <div className="row">
-                <div className="col-sm-6 col-sm-offset-3">
-                  <h1 className="module-title font-alt">Shop</h1>
-                </div>
+      <div className="main">
+        <section className="module module-cart-top">
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-10 col-sm-offset-1">
+                <h1 className="module-title font-alt">Cart</h1>
               </div>
             </div>
-          </section>
-
-        </header>
+            <hr className="divider-w pt-20" />
+          </div>
+        </section>
+        <section className="page-module-content module module-cart-bottom">
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-12">
+                <div className="woocommerce"> </div>
+                <article id="post-7" className="post-7 page type-page status-publish hentry">
+                  <div className="entry-content">
+                    <div className="woocommerce">
+                      <div className="woocommerce-notices-wrapper"> </div>
+                      <p className="cart-empty">Your cart is currently empty.</p>
+                      {' '}
+                      <p className="return-to-shop">
+                        <Link className="button wc-backward" to="https://tempwp.orderwebsitenow.com/">
+                        Return to shop
+                          {' '}
+                        </Link>
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     );
   }
