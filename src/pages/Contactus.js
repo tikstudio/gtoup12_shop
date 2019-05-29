@@ -6,7 +6,6 @@ class ContactUs extends Component {
       <div>
         <section
           className="page-header-module module bg-dark"
-          style={{ backgroundImage: 'url(https://tempwp.orderwebsitenow.com/wp-content/themes/shop-isle/assets/images/header.jpg)' }}
         >
           <div className="container">
             <div className="row">

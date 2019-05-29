@@ -24,10 +24,11 @@ class App extends Component {
             <Route path="/exclusiveproducts" component={ExclusiveProducts} />
             <Route path="/relatedproducts" component={RelatedProducts} />
             <Route path="/singleproduct" component={SingleProduct} />
+            <Route path="/product/:id" component={SingleProduct} />
             <Route path="/cart" component={Cart} />
             <Route path="/contact-us" component={ContactUs} />
-            <Route path="/myAccount" component={MyAccount} />
             <Route path="/my-account" component={MyAccount} />
+            <Route path="/page/:page" exact component={Home} />
             <Route path="/" exact component={Home} />
           </Switch>
         </BrowserRouter>
