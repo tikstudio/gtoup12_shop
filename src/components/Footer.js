@@ -21,7 +21,7 @@ class Footer extends Component {
 ShopIsle
                 </Link>
 powered by
-                <Link className="shop-isle-poweredby" to="http://wordpress.org/" x rel="nofollow">
+                <Link className="shop-isle-poweredby" to="http://wordpress.org/" rel="nofollow">
                   {' '}
 WordPress
                 </Link>
