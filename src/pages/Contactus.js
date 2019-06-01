@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 class ContactUs extends Component {
   render() {
@@ -6,7 +6,7 @@ class ContactUs extends Component {
       <div>
         <section
           className="page-header-module module bg-dark"
-          style={{ backgroundImage: 'url(https://tempwp.orderwebsitenow.com/wp-content/themes/shop-isle/assets/images/header.jpg)' }}
+          style={{backgroundImage: 'url(https://tempwp.orderwebsitenow.com/wp-content/themes/shop-isle/assets/images/header.jpg)'}}
         >
           <div className="container">
             <div className="row">
@@ -50,7 +50,7 @@ class ContactUs extends Component {
                               required=""
                             />
                             <label htmlFor="wpforms-104-field_0" className="wpforms-field-sublabel after ">
-                                First
+                              First
                             </label>
                           </div>
                           <div className="wpforms-field-row-block wpforms-one-half">
@@ -62,7 +62,7 @@ class ContactUs extends Component {
                               required=""
                             />
                             <label htmlFor="wpforms-104-field_0-last" className="wpforms-field-sublabel after ">
-                                     Last
+                              Last
                             </label>
                           </div>
                         </div>
@@ -75,7 +75,7 @@ class ContactUs extends Component {
                         <label
                           className="wpforms-field-label"
                           htmlFor="wpforms-104-field_1">
-                                 Email
+                          Email
                           {' '}
                           <span className="wpforms-required-label">
                                 *
@@ -95,7 +95,7 @@ class ContactUs extends Component {
                         data-field-id="2"
                       >
                         <label className="wpforms-field-label" htmlFor="wpforms-104-field_2">
-                        Comment or Message
+                          Comment or Message
                           <span className="wpforms-required-label">*</span>
                         </label>
                         <textarea
@@ -112,12 +112,12 @@ class ContactUs extends Component {
                         className="wpforms-field-label">
                         Phone
                       </label>
-                      <input type="text" name="wpforms[hp]" id="wpforms-104-field-hp" className="wpforms-field-medium" />
+                      <input type="text" name="wpforms[hp]" id="wpforms-104-field-hp" className="wpforms-field-medium"/>
                     </div>
                     <div className="wpforms-submit-container">
-                      <input type="hidden" name="wpforms[id]" value="104" />
-                      <input type="hidden" name="wpforms[author]" value="1" />
-                      <input type="hidden" name="wpforms[post_id]" value="102" />
+                      <input type="hidden" name="wpforms[id]" value="104"/>
+                      <input type="hidden" name="wpforms[author]" value="1"/>
+                      <input type="hidden" name="wpforms[post_id]" value="102"/>
                       <button
                         type="submit"
                         name="wpforms[submit]"
