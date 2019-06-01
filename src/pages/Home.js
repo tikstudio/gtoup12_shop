@@ -6,6 +6,7 @@ import Wrapper from '../components/Wrapper';
 import { SITE_URL } from '../api';
 import { fetchProducts } from '../store/actions/product';
 import ProductItem from '../components/ProductItem';
+import SingleProduct from '../components/widgets/SingleProduct';
 
 class Home extends Component {
   static propTypes = {
@@ -47,7 +48,7 @@ class Home extends Component {
     const { products } = this.props;
     return (
       <Wrapper headerImage={`${SITE_URL}/wp-content/themes/shop-isle/assets/images/header.jpg`}>
-        <div className="woocommerce-notices-wrapper"/>
+        <div className="woocommerce-notices-wrapper" />
         <section className="module-small module-small-shop">
           <div className="container">
 
@@ -66,7 +67,7 @@ class Home extends Component {
             </form>
 
             <span className="shop-isle-sidebar-open">
-              <span className="icon-filter"/>
+              <span className="icon-filter" />
             </span>
             <div className="col-sm-9 shop-with-sidebar" id="shop-isle-blog-container">
 
@@ -77,7 +78,7 @@ class Home extends Component {
                     key={p.id}
                     className="product type-product post-60 status-publish instock product_cat-posters has-post-thumbnail sale shipping-taxable purchasable product-type-simple"
                   >
-                    <ProductItem data={p}/>
+                      <ProductItem data={p} />
                   </li>
                 ))}
 
@@ -110,9 +111,10 @@ class Home extends Component {
 
             <div className="col-sm-3 col-md-3 sidebar sidebar-shop" style={{ left: '0px' }}>
               <span className="shop-isle-sidebar-close">
-                <span className="icon-close"/>
+                <span className="icon-close" />
               </span>
               <aside id="secondary" className="widget-area" role="complementary">
+
                 <div
                   id="woocommerce_layered_nav-2"
                   className="widget woocommerce widget_layered_nav woocommerce-widget-layered-nav"
@@ -204,7 +206,7 @@ AMD40
                           </span>
                         </div>
 
-                        <div className="clear"/>
+                        <div className="clear" />
                       </div>
                     </div>
                   </form>
@@ -225,7 +227,7 @@ AMD40
 
 const mapStateToProps = state => ({
   products: state.product.products,
-  page: state.product.page
+  page: state.product.page,
 });
 
 const mapDispatchToProps = {

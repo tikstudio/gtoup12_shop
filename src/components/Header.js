@@ -127,21 +127,24 @@ class Header extends Component {
           </nav>
 
         </header>
-        <div className="woocommerce-products-header">
-          <section
-            className="woocommerce-page-title page-header-module module bg-dark"
-            style={{ backgroundImage: `url(${this.props.headerImage})` }}
-          >
-            <div className="container">
-              <div className="row">
-                <div className="col-sm-6 col-sm-offset-3">
-                  <h1 className="module-title font-alt">Shop</h1>
+        {this.props.headerImage ? (
+            <div className="woocommerce-products-header">
+              <section
+                  className="woocommerce-page-title page-header-module module bg-dark"
+                  style={{ backgroundImage: `url(${this.props.headerImage})` }}
+              >
+                <div className="container">
+                  <div className="row">
+                    <div className="col-sm-6 col-sm-offset-3">
+                      <h1 className="module-title font-alt">Shop</h1>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </section>
+              </section>
 
-        </div>
+            </div>
+        ): null}
+
       </div>
     );
   }

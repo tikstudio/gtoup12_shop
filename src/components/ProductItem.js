@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 class ProductItem extends Component {
   render() {
-    const { data } = this.props;
+    const {data} = this.props;
     return (
       <Link
-        to={`/product/${data.id}`}
+        to={`/product/${data.slug}`}
         className="woocommerce-LoopProduct-link woocommerce-loop-product__link"
       >
         <div className="prod-img-wrap">
@@ -41,28 +41,20 @@ class ProductItem extends Component {
 
         <span className="price">
           <del>
-            <span
-              className="woocommerce-Price-amount amount"
-            >
-              <span
-                className="woocommerce-Price-currencySymbol"
-              >
-AMD
+            <span className="woocommerce-Price-amount amount">
+              <span className="woocommerce-Price-currencySymbol">
+                  AMD
               </span>
-15.00
+                15.00
             </span>
           </del>
           {' '}
           <ins>
-            <span
-              className="woocommerce-Price-amount amount"
-            >
-              <span
-                className="woocommerce-Price-currencySymbol"
-              >
-AMD
+            <span className="woocommerce-Price-amount amount">
+              <span className="woocommerce-Price-currencySymbol">
+                AMD
               </span>
-12.00
+              {parseFloat(data.price).toFixed(2)}
             </span>
           </ins>
         </span>

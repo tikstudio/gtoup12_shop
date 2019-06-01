@@ -20,3 +20,7 @@ export function getProducts(data) {
   const s = qs(data);
   return axios.get(`/wp-json/wc/v3/products?${s}`);
 }
+export function getSingleProducts(slug) {
+  const s = qs({slug});
+  return axios.get(`/wp-json/wc/v3/products?${s}`);
+}

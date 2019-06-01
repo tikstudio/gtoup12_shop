@@ -7,3 +7,14 @@ export function fetchProducts(data) {
     type: FETCH_PRODUCTS_REQUEST, payload: { data },
   };
 }
+
+
+export const FETCH_SINGLEPRODUCTS_REQUEST = 'FETCH_SINGLEPRODUCTS_REQUEST';
+export const FETCH_SINGLEPRODUCTS_SUCCESS = 'FETCH_SINGLEPRODUCTS_SUCCESS';
+export const FETCH_SINGLEPRODUCTS_FAIL = 'FETCH_SINGLEPRODUCTS_FAIL';
+
+export function fetchSingleProducts(slug) {
+  return {
+    type: FETCH_SINGLEPRODUCTS_REQUEST, payload: { slug },
+  };
+}

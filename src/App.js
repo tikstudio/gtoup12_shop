@@ -24,7 +24,7 @@ class App extends Component {
             <Route path="/exclusiveproducts" component={ExclusiveProducts} />
             <Route path="/relatedproducts" component={RelatedProducts} />
             <Route path="/singleproduct" component={SingleProduct} />
-            <Route path="/product/:id" component={SingleProduct} />
+            <Route path="/product/:slug" component={SingleProduct} />
             <Route path="/cart" component={Cart} />
             <Route path="/contact-us" component={ContactUs} />
             <Route path="/my-account" component={MyAccount} />
