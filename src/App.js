@@ -8,7 +8,7 @@ import MyAccount from './pages/MyAccount';
 import Cart from './pages/Cart';
 import ExclusiveProducts from './components/widgets/ExclusiveProducts';
 import RelatedProducts from './components/widgets/RelatedProducts';
-import SingleProduct from './components/widgets/SingleProduct';
+import SingleProduct from './pages/SingleProduct';
 
 
 class App extends Component {
@@ -24,7 +24,7 @@ class App extends Component {
             <Route path="/exclusiveproducts" component={ExclusiveProducts} />
             <Route path="/relatedproducts" component={RelatedProducts} />
             <Route path="/singleproduct" component={SingleProduct} />
-            <Route path="/product/:id" component={SingleProduct} />
+            <Route path="/product/:slug" component={SingleProduct} />
             <Route path="/cart" component={Cart} />
             <Route path="/contact-us" component={ContactUs} />
             <Route path="/my-account" component={MyAccount} />

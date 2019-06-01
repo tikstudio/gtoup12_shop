@@ -13,35 +13,27 @@ class Home extends Component {
     products: Prototype.array.isRequired,
     match: Prototype.object.isRequired,
     history: Prototype.object.isRequired,
-    page: Prototype.string.isRequired,
+    page: Prototype.number.isRequired,
   }
 
-  static defaultProps = {}
-
-  constructor(props) {
-    super(props);
-
-    this.unlisten = this.props.history.listen(this.pageChange);
-  }
-
+  static defaultProps = {};
 
   componentDidMount() {
-    const page = this.props.match.params.page || 1;
+    const page = parseInt(this.props.match.params.page) || 1;
     if (this.props.page !== page) {
       this.props.fetchProducts({ page });
     }
   }
 
-  componentWillUnmount() {
-    this.unlisten();
-  }
-
-  pageChange = (location) => {
-    const [, page] = location.pathname.match(/\/page\/(\d+)/) || [];
-    if (page) {
+  componentWillReceiveProps(nextProps) {
+    const oldPage = parseInt(this.props.match.params.page) || 1;
+    const page = parseInt(nextProps.match.params.page) || 1;
+    if (page !== oldPage) {
+      window.scrollTo(0, 300);
       this.props.fetchProducts({ page });
     }
   }
+
 
   render() {
     const { products } = this.props;

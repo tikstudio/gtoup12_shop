@@ -6,7 +6,7 @@ class ProductItem extends Component {
     const { data } = this.props;
     return (
       <Link
-        to={`/product/${data.id}`}
+        to={`/product/${data.slug}`}
         className="woocommerce-LoopProduct-link woocommerce-loop-product__link"
       >
         <div className="prod-img-wrap">
