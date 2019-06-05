@@ -31,22 +31,22 @@ class Header extends Component {
                       <h1 className="site-title">
                         <Link
                           to="/"
-                          title="Group12 Shop"
+                          title="Home"
                         >
                           Group12 Shop
                         </Link>
                       </h1>
                       <p className="site-description">
-                        <Link to="/" title="" rel="home"/>
+                        <Link to="/" title="" rel="home" />
                       </p>
 
                     </div>
                   </div>
                   <div type="button" className="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
                     <span className="sr-only">Toggle navigation</span>
-                    <span className="icon-bar"/>
-                    <span className="icon-bar"/>
-                    <span className="icon-bar"/>
+                    <span className="icon-bar" />
+                    <span className="icon-bar" />
+                    <span className="icon-bar" />
                   </div>
                 </div>
 
@@ -58,17 +58,17 @@ class Header extends Component {
                         id="menu-item-44"
                         className="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-44"
                       >
-                        <a href="https://tempwp.orderwebsitenow.com/" aria-current="page">
-                          <i className="obfx-menu-icon fa fa-home"/>
+                        <Link to="/" aria-current="page">
+                          <i className="obfx-menu-icon fa fa-home" />
                           Home
-                        </a>
+                        </Link>
                       </li>
                       <li
                         id="menu-item-106"
                         className="menu-item menu-item-type-post_type menu-item-object-page menu-item-106"
                       >
                         <Link to="/contact-us">
-                          <i className="obfx-menu-icon dashicons dashicons-email"/>
+                          <i className="obfx-menu-icon dashicons dashicons-email" />
                           Contact Us
                         </Link>
                       </li>
@@ -76,10 +76,10 @@ class Header extends Component {
                         id="menu-item-48"
                         className="menu-item menu-item-type-post_type menu-item-object-page menu-item-48"
                       >
-                        <a href="https://tempwp.orderwebsitenow.com/my-account/">
-                          <i className="obfx-menu-icon fa fa-user"/>
+                        <Link to="/my-account">
+                          <i className="obfx-menu-icon fa fa-user" />
                           My account
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </div>
@@ -88,7 +88,7 @@ class Header extends Component {
                 <div className="navbar-cart">
 
                   <div className="header-search">
-                    <div className="glyphicon glyphicon-search header-search-button"/>
+                    <div className="glyphicon glyphicon-search header-search-button" />
                     <div className="header-search-input">
                       <form
                         role="search"
@@ -103,8 +103,8 @@ class Header extends Component {
                           name="s"
                           title="Search for:"
                         />
-                        <input type="submit" value="Search"/>
-                        <input type="hidden" name="post_type" value="product"/>
+                        <input type="submit" value="Search" />
+                        <input type="hidden" name="post_type" value="product" />
                       </form>
                     </div>
                   </div>
@@ -112,7 +112,7 @@ class Header extends Component {
                   <div className="navbar-cart-inner">
 
                     <Link to="/cart" title="View your shopping cart" className="cart-contents">
-                      <span className="icon-basket"/>
+                      <span className="icon-basket" />
                       <span className="cart-item-number">0</span>
                     </Link>
 
@@ -125,25 +125,24 @@ class Header extends Component {
             </div>
 
           </nav>
-
         </header>
         {this.props.headerImage ? (
-            <div className="woocommerce-products-header">
-              <section
-                  className="woocommerce-page-title page-header-module module bg-dark"
-                  style={{ backgroundImage: `url(${this.props.headerImage})` }}
-              >
-                <div className="container">
-                  <div className="row">
-                    <div className="col-sm-6 col-sm-offset-3">
-                      <h1 className="module-title font-alt">Shop</h1>
-                    </div>
+          <div className="woocommerce-products-header">
+            <section
+              className="woocommerce-page-title page-header-module module bg-dark"
+              style={{ backgroundImage: `url(${this.props.headerImage})` }}
+            >
+              <div className="container">
+                <div className="row">
+                  <div className="col-sm-6 col-sm-offset-3">
+                    <h1 className="module-title font-alt">Shop</h1>
                   </div>
                 </div>
-              </section>
+              </div>
+            </section>
 
-            </div>
-        ): null}
+          </div>
+        ) : null }
 
       </div>
     );

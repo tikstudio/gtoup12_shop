@@ -1,16 +1,14 @@
 import {
   FETCH_PRODUCTS_FAIL,
   FETCH_PRODUCTS_REQUEST,
-  FETCH_PRODUCTS_SUCCESS,
-  FETCH_SINGLEPRODUCTS_REQUEST,
-  FETCH_SINGLEPRODUCTS_FAIL,
-  FETCH_SINGLEPRODUCTS_SUCCESS,
+  FETCH_PRODUCTS_SUCCESS, FETCH_SINGLE_FAIL,
+  FETCH_SINGLE_PRODUCT, FETCH_SINGLE_SUCCESS,
 } from '../actions/product';
 
 const initialState = {
   products: [],
   single: {},
-  page: '1',
+  page: 0,
 };
 export default function reducer(state = initialState, action) {
   switch (action.type) {
@@ -24,14 +22,13 @@ export default function reducer(state = initialState, action) {
       return { ...state, products: initialState.products };
     }
 
-
-    case FETCH_SINGLEPRODUCTS_REQUEST: {
+    case FETCH_SINGLE_PRODUCT: {
       return { ...state, single: initialState.single };
     }
-    case FETCH_SINGLEPRODUCTS_SUCCESS: {
+    case FETCH_SINGLE_SUCCESS: {
       return { ...state, single: action.payload.data };
     }
-    case FETCH_SINGLEPRODUCTS_FAIL: {
+    case FETCH_SINGLE_FAIL: {
       return { ...state, single: initialState.single };
     }
 

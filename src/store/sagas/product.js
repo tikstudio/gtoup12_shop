@@ -3,8 +3,8 @@ import * as api from '../../api';
 import {
   FETCH_PRODUCTS_FAIL,
   FETCH_PRODUCTS_REQUEST,
-  FETCH_PRODUCTS_SUCCESS, FETCH_SINGLEPRODUCTS_FAIL, FETCH_SINGLEPRODUCTS_REQUEST,
-  FETCH_SINGLEPRODUCTS_SUCCESS,
+  FETCH_PRODUCTS_SUCCESS, FETCH_SINGLE_FAIL,
+  FETCH_SINGLE_PRODUCT, FETCH_SINGLE_SUCCESS
 } from '../actions/product';
 
 function* handleProductsFetch(action) {
@@ -21,16 +21,17 @@ function* handleProductsFetch(action) {
     });
   }
 }
-function* handleSingleProductsFetch(action) {
+
+function* handleSingleProductFetch(action) {
   try {
-    const { data } = yield call(api.getSingleProducts, action.payload.slug);
+    const { data } = yield call(api.getSingleProduct, action.payload.slug);
     yield put({
-      type: FETCH_SINGLEPRODUCTS_SUCCESS,
+      type: FETCH_SINGLE_SUCCESS,
       payload: { data: data[0] },
     });
   } catch (e) {
     yield put({
-      type: FETCH_SINGLEPRODUCTS_FAIL,
+      type: FETCH_SINGLE_FAIL,
       message: e.message,
     });
   }
@@ -38,5 +39,5 @@ function* handleSingleProductsFetch(action) {
 
 export default function* watcher() {
   yield takeLatest(FETCH_PRODUCTS_REQUEST, handleProductsFetch);
-  yield takeLatest(FETCH_SINGLEPRODUCTS_REQUEST, handleSingleProductsFetch);
+  yield takeLatest(FETCH_SINGLE_PRODUCT, handleSingleProductFetch);
 }

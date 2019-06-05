@@ -3,12 +3,12 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Home from './pages/Home';
-import ContactUs from './pages/Contactus';
 import MyAccount from './pages/MyAccount';
 import Cart from './pages/Cart';
 import ExclusiveProducts from './components/widgets/ExclusiveProducts';
 import RelatedProducts from './components/widgets/RelatedProducts';
-import SingleProduct from './components/widgets/SingleProduct';
+import SingleProduct from './pages/SingleProduct';
+import ContactUs from './pages/ContactUs';
 
 
 class App extends Component {

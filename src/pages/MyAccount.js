@@ -1,36 +1,38 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Wrapper from '../components/Wrapper';
 
 class MyAccount extends Component {
   render() {
     return (
-      <div className="main">
-        <section className="module module-cart-top">
-          <div className="container">
-            <div className="row">
-              <div className="col-sm-10 col-sm-offset-1">
-                <h1 className="module-title font-alt">My account</h1>
+      <Wrapper headerImage={false}>
+        <div className="main">
+          <section className="module module-cart-top">
+            <div className="container">
+              <div className="row">
+                <div className="col-sm-10 col-sm-offset-1">
+                  <h1 className="module-title font-alt">My account</h1>
 
 
+                </div>
               </div>
+              <hr className="divider-w pt-20" />
             </div>
-            <hr className="divider-w pt-20" />
-          </div>
 
-        </section>
-        <section className="page-module-content module module-cart-bottom">
-          <div className="container">
-            <div className="row">
-              <div className="col-sm-12">
-                <div className="woocommerce" />
+          </section>
+          <section className="page-module-content module module-cart-bottom">
+            <div className="container">
+              <div className="row">
+                <div className="col-sm-12">
+                  <div className="woocommerce" />
 
-                <article id="post-9" className="post-9 page type-page status-publish hentry">
-                  <div className="entry-content">
-                    <div className="woocommerce">
-                      <div className="woocommerce-notices-wrapper" />
-                      <h2>Login</h2>
-                      <form className="woocommerce-form woocommerce-form-login login" method="post">
-                        <p className="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                  <article id="post-9" className="post-9 page type-page status-publish hentry">
+                    <div className="entry-content">
+                      <div className="woocommerce">
+                        <div className="woocommerce-notices-wrapper" />
+                        <h2>Login</h2>
+                        <form className="woocommerce-form woocommerce-form-login login" method="post">
+                          <p className="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                           <label htmlFor="username">
                             Username or email address&nbsp;
                             <span className="required">*</span>
@@ -44,7 +46,7 @@ class MyAccount extends Component {
                             value=""
                           />
                         </p>
-                        <p className="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                          <p className="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                           <label htmlFor="password">
                             Password&nbsp;
                             <span className="required">*</span>
@@ -58,7 +60,7 @@ class MyAccount extends Component {
                           />
                         </p>
 
-                        <p className="form-row">
+                          <p className="form-row">
                           <label className="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
                             <input
                               className="woocommerce-form__input woocommerce-form__input-checkbox"
@@ -85,20 +87,21 @@ class MyAccount extends Component {
                             Log in
                           </button>
                         </p>
-                        <p className="woocommerce-LostPassword lost_password">
+                          <p className="woocommerce-LostPassword lost_password">
                           <Link to="https://tempwp.orderwebsitenow.com/my-account/lost-password/">Lost your password?</Link>
                         </p>
-                      </form>
+                        </form>
+                      </div>
                     </div>
-                  </div>
 
-                </article>
+                  </article>
+                </div>
               </div>
-            </div>
 
-          </div>
-        </section>
-      </div>
+            </div>
+          </section>
+        </div>
+      </Wrapper>
     );
   }
 }

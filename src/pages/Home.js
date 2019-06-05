@@ -6,7 +6,8 @@ import Wrapper from '../components/Wrapper';
 import { SITE_URL } from '../api';
 import { fetchProducts } from '../store/actions/product';
 import ProductItem from '../components/ProductItem';
-import SingleProduct from '../components/widgets/SingleProduct';
+
+
 
 class Home extends Component {
   static propTypes = {
@@ -14,38 +15,50 @@ class Home extends Component {
     products: Prototype.array.isRequired,
     match: Prototype.object.isRequired,
     history: Prototype.object.isRequired,
-    page: Prototype.string.isRequired,
+    page: Prototype.number.isRequired,
   }
-
-  static defaultProps = {}
 
   constructor(props) {
     super(props);
 
-    this.unlisten = this.props.history.listen(this.pageChange);
   }
 
 
+
+  static defaultProps = {};
+
   componentDidMount() {
-    const page = this.props.match.params.page || 1;
+    const page = parseInt(this.props.match.params.page) || 1;
     if (this.props.page !== page) {
       this.props.fetchProducts({ page });
     }
   }
 
-  componentWillUnmount() {
-    this.unlisten();
-  }
 
-  pageChange = (location) => {
-    const [, page] = location.pathname.match(/\/page\/(\d+)/) || [];
-    if (page) {
+
+
+
+  componentWillReceiveProps(nextProps) {
+    const oldPage = parseInt(this.props.match.params.page) || 1;
+    const page = parseInt(nextProps.match.params.page) || 1;
+    if (page !== oldPage) {
+      window.scrollTo(0, 300);
       this.props.fetchProducts({ page });
     }
   }
 
+
   render() {
-    const { products } = this.props;
+    //
+     const { products } = this.props;
+     console.log(products)
+    // const categoryId = parseInt(this.props.match.params.categoryId);
+    // const min = getSearchParam('min');
+    // const max = getSearchParam('max');
+    // // products = filterByCategory(categoryId, products);
+    // products = filterByPrice(min, max, products);
+
+
     return (
       <Wrapper headerImage={`${SITE_URL}/wp-content/themes/shop-isle/assets/images/header.jpg`}>
         <div className="woocommerce-notices-wrapper" />
@@ -78,7 +91,7 @@ class Home extends Component {
                     key={p.id}
                     className="product type-product post-60 status-publish instock product_cat-posters has-post-thumbnail sale shipping-taxable purchasable product-type-simple"
                   >
-                      <ProductItem data={p} />
+                    <ProductItem data={p} />
                   </li>
                 ))}
 
@@ -114,7 +127,6 @@ class Home extends Component {
                 <span className="icon-close" />
               </span>
               <aside id="secondary" className="widget-area" role="complementary">
-
                 <div
                   id="woocommerce_layered_nav-2"
                   className="widget woocommerce widget_layered_nav woocommerce-widget-layered-nav"
@@ -195,14 +207,14 @@ class Home extends Component {
                         <div className="price_label" style={{}}>
                           Price:
                           {' '}
-                          <span className="from">AMD0</span>
+                          <span className="from">AMD 0</span>
                           {' '}
                           —
                           {' '}
                           <span
                             className="to"
                           >
-AMD40
+                                    AMD 50
                           </span>
                         </div>
 

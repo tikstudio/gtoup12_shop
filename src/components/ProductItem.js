@@ -1,10 +1,11 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class ProductItem extends Component {
   render() {
-    const {data} = this.props;
+    const { data } = this.props;
     return (
+
       <Link
         to={`/product/${data.slug}`}
         className="woocommerce-LoopProduct-link woocommerce-loop-product__link"
@@ -37,25 +38,43 @@ class ProductItem extends Component {
         <h2 className="woocommerce-loop-product__title">
           {data.name}
         </h2>
-        <span className="onsale">Sale!</span>
-
+        {data.on_sale
+          ? <span className="onsale">SALE</span>
+          : ''}
         <span className="price">
           <del>
-            <span className="woocommerce-Price-amount amount">
-              <span className="woocommerce-Price-currencySymbol">
-                  AMD
-              </span>
-                15.00
-            </span>
+            {data.regular_price
+              ? (
+                <span
+                  className="woocommerce-Price-amount amount"
+                >
+                  <span
+                    className="woocommerce-Price-currencySymbol"
+                  >
+AMD
+                  </span>
+                  {parseFloat(data.regular_price).toFixed(2)}
+                </span>
+              ) : ' '}
           </del>
           {' '}
           <ins>
-            <span className="woocommerce-Price-amount amount">
-              <span className="woocommerce-Price-currencySymbol">
-                AMD
+            {' '}
+            {data.price ? (
+              <span
+                className="woocommerce-Price-amount amount"
+              >
+                <span
+                  className="woocommerce-Price-currencySymbol"
+                >
+AMD
+                </span>
+
+                {parseFloat(data.price).toFixed(2)}
+
               </span>
-              {parseFloat(data.price).toFixed(2)}
-            </span>
+            )
+              : ''}
           </ins>
         </span>
       </Link>

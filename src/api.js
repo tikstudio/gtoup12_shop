@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { stringify as qs } from 'querystringify';
+import Cache from './helpers/Chace';
 
 export const SITE_URL = 'https://tempwp.orderwebsitenow.com';
 
@@ -18,9 +19,16 @@ axios.interceptors.request.use((config) => {
 // eslint-disable-next-line import/prefer-default-export
 export function getProducts(data) {
   const s = qs(data);
-  return axios.get(`/wp-json/wc/v3/products?${s}`);
+  const cache = Cache.getCache(`getProducts${data.page}`, data);
+  if (cache) return cache;
+
+  const res = axios.get(`/wp-json/wc/v3/products?${s}`);
+  Cache.saveCache(res, `getProducts${data.page}`, data, 5);
+  return res;
 }
-export function getSingleProducts(slug) {
-  const s = qs({slug});
+
+
+export function getSingleProduct(slug) {
+  const s = qs({ slug });
   return axios.get(`/wp-json/wc/v3/products?${s}`);
 }

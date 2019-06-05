@@ -9,12 +9,12 @@ export function fetchProducts(data) {
 }
 
 
-export const FETCH_SINGLEPRODUCTS_REQUEST = 'FETCH_SINGLEPRODUCTS_REQUEST';
-export const FETCH_SINGLEPRODUCTS_SUCCESS = 'FETCH_SINGLEPRODUCTS_SUCCESS';
-export const FETCH_SINGLEPRODUCTS_FAIL = 'FETCH_SINGLEPRODUCTS_FAIL';
+export const FETCH_SINGLE_PRODUCT = 'FETCH_SINGLE_PRODUCT';
+export const FETCH_SINGLE_SUCCESS = 'FETCH_SINGLE_SUCCESS';
+export const FETCH_SINGLE_FAIL = 'FETCH_SINGLE_FAIL';
 
-export function fetchSingleProducts(slug) {
+export function fetchSingleProduct(slug) {
   return {
-    type: FETCH_SINGLEPRODUCTS_REQUEST, payload: { slug },
+    type: FETCH_SINGLE_PRODUCT, payload: { slug },
   };
 }

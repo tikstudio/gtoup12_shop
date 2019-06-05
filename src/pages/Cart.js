@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Wrapper from "../components/Wrapper";
 
 class Cart extends Component {
   render() {
     return (
+      <Wrapper headerImage={false}>
       <div className="main">
         <section className="module module-cart-top">
           <div className="container">
@@ -27,7 +29,7 @@ class Cart extends Component {
                       <p className="cart-empty">Your cart is currently empty.</p>
                       {' '}
                       <p className="return-to-shop">
-                        <Link className="button wc-backward" to="https://tempwp.orderwebsitenow.com/">
+                        <Link className="button wc-backward" to="/">
                         Return to shop
                           {' '}
                         </Link>
@@ -40,6 +42,7 @@ class Cart extends Component {
           </div>
         </section>
       </div>
+      </Wrapper>
     );
   }
 }
