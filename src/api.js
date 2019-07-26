@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { stringify as qs } from 'querystringify';
+import {stringify as qs} from 'querystringify';
 import Cache from './helpers/Chace';
 
 export const SITE_URL = 'https://tempwp.orderwebsitenow.com';
@@ -8,6 +8,7 @@ const CONSUMER_KEY = 'ck_3c19be5991be88176096737429edd9612b0ac80b';
 const CONSUMER_SECRET = 'cs_6e016ce51793f3b41aff2c1c729f09fb6122ec6d';
 
 axios.defaults.baseURL = SITE_URL;
+axios.defaults.headers['Content-Type'] = 'application/json';
 
 axios.interceptors.request.use((config) => {
   const s = config.url.indexOf('?') > -1 ? '&' : '?';
@@ -29,6 +30,65 @@ export function getProducts(data) {
 
 
 export function getSingleProduct(slug) {
-  const s = qs({ slug });
+  const s = qs({slug});
   return axios.get(`/wp-json/wc/v3/products?${s}`);
+}
+
+export function getFiltrePrice(price) {
+  const s = qs({price});
+  return axios.get(`/wp-json/wc/v3/products?${s}`);
+}
+
+
+export function getCheapOrExpensiveProducts(isCheap = true) {
+  const s = qs({
+    orderby: 'price',
+    order: isCheap ? 'asc' : 'desc',
+    per_page: 1,
+  });
+  return axios.get(`/wp-json/wc/v3/products?${s}`);
+}
+
+
+export function getFiltreColor() {
+  return axios.get('/wp-json/wc/v3/products/attributes/1/terms/');
+}
+
+export function addToCartFetch(product_id, quantity = 1) {
+  return axios.post('/wp-json/wc/v2/cart/add?', {product_id, quantity});
+}
+
+export function getCartData() {
+  return axios.get('/wp-json/wc/v2/cart');
+}
+
+
+export function clearCart() {
+  return axios.post('/wp-json/wc/v2/cart/clear');
+}
+
+export function cartItem() {
+  return axios.get('/wp-json/wc/v2/cart/count-items');
+}
+
+export function delCartItem(cart_item_key) {
+  const s = qs({cart_item_key});
+  return axios.delete(`/wp-json/wc/v2/cart/cart-item?${s}`);
+}
+
+
+export function cartCountTotal() {
+  return axios.get('/wp-json/wc/v2/cart/totals');
+}
+
+
+export function updateCartItem(cart_item_key, quantity) {
+  // const s = qs({ key, quantity });
+  return axios.post('/wp-json/wc/v2/cart/cart-item', {cart_item_key, quantity});
+}
+
+export function getFindData(search) {
+  const query = qs({search})
+  return axios.get(`/wp-json/wc/v3/products?${query}`)
+
 }

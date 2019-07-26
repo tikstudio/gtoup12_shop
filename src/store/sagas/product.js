@@ -1,6 +1,7 @@
-import { takeLatest, put, call } from 'redux-saga/effects';
+import { takeLatest, put, call, all } from 'redux-saga/effects';
 import * as api from '../../api';
 import {
+ FETCH_PRICE_FAIL, FETCH_PRICE_REQUEST, FETCH_PRICE_SUCCESS,
   FETCH_PRODUCTS_FAIL,
   FETCH_PRODUCTS_REQUEST,
   FETCH_PRODUCTS_SUCCESS, FETCH_SINGLE_FAIL,
@@ -37,7 +38,27 @@ function* handleSingleProductFetch(action) {
   }
 }
 
+function* handlePriceRequest(action) {
+  try {
+    const [{ data: min }, { data: max }] = yield all([
+      call(api.getCheapOrExpensiveProducts),
+      call(api.getCheapOrExpensiveProducts, false),
+    ]);
+
+    yield put({
+      type: FETCH_PRICE_SUCCESS,
+      payload: { min: Math.floor(min[0].regular_price), max: Math.ceil(max[0].regular_price) },
+    });
+  } catch (e) {
+    yield put({
+      type: FETCH_PRICE_FAIL,
+      message: e.message,
+    });
+  }
+}
+
 export default function* watcher() {
   yield takeLatest(FETCH_PRODUCTS_REQUEST, handleProductsFetch);
   yield takeLatest(FETCH_SINGLE_PRODUCT, handleSingleProductFetch);
+  yield takeLatest(FETCH_PRICE_REQUEST, handlePriceRequest);
 }

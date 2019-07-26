@@ -16,7 +16,8 @@ class Footer extends Component {
 
             <div className="col-sm-6">
               <p className="shop-isle-poweredby-box">
-                <Link className="shop-isle-poweredby" to="http://themeisle.com/themes/shop-isle/" rel="nofollow">
+                <Link className="shop-isle-poweredby"
+                      to="http://themeisle.com/themes/shop-isle/" rel="nofollow">
                   {' '}
 ShopIsle
                 </Link>
@@ -29,16 +30,16 @@ WordPress
             </div>
             <div className="col - sm - 6">
               <div className="footer - social - links">
-                <Link to="https://tempwp.orderwebsitenow.com/#" target="_blank">
+                <Link to="https://www.facebook.com/" target="_blank">
                   <span className="social_facebook" />
                 </Link>
-                <Link to="https://tempwp.orderwebsitenow.com/#" target="_blank">
+                <Link to="https://twitter.com/?lang=ru" target="_blank">
                   <span className="social_twitter" />
                 </Link>
-                <Link to="https://tempwp.orderwebsitenow.com/#" target="_blank">
+                <Link to='https://dribbble.com/tags/social' target="_blank">
                   <span className="social_dribbble" />
                 </Link>
-                <Link to="https://tempwp.orderwebsitenow.com/#" target="_blank">
+                <Link to="https://www.skype.com/ru/" target="_blank">
                   <span className="social_skype" />
                 </Link>
               </div>

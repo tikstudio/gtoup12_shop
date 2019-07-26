@@ -2706,7 +2706,6 @@ Search form Header
 }
 
 .header-search-input {
-    display: none;
     position: absolute;
     top: 100%;
     right: 0;
@@ -3333,12 +3332,12 @@ Cart page
     border: 1px solid #e5e5e5;
 }
 
-.shop_table.cart tr:last-child td {
-    padding-right: 0;
-    padding-left: 0;
-    border-right: none;
-    border-left: none;
-}
+/*.shop_table.cart tr:last-child td {*/
+/*    padding-right: 0;*/
+/*    padding-left: 0;*/
+/*    border-right: none;*/
+/*    border-left: none;*/
+/*}*/
 
 .shop_table.cart > tbody > tr:nth-of-type(odd) {
     background: none;
@@ -3521,6 +3520,7 @@ ul.products li.product .product-button-wrap .product_type_variable:hover {
 
 .prod-img-wrap {
     position: relative;
+
 }
 
 .post-type-archive-product .products li > a {
