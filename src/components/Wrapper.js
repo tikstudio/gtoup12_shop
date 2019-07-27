@@ -6,11 +6,11 @@ class Wrapper extends Component {
   render() {
     return (
       <>
-        <Header headerImage={this.props.headerImage}/>
+        <Header headerImage={this.props.headerImage} />
         <div className="main">
           {this.props.children}
         </div>
-        <Footer/>
+        <Footer />
       </>
     );
   }

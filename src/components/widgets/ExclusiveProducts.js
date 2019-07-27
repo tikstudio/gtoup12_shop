@@ -1,393 +1,100 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import Prototype from 'prop-types';
+import { connect } from 'react-redux';
+import {AddToCart, fetchProducts} from '../../store/actions/product';
+
 
 class ExclusiveProducts extends Component {
+  static propTypes = {
+    fetchProducts: Prototype.func.isRequired,
+    products: Prototype.array.isRequired,
+    randomItem: Prototype.array.isRequired,
+  }
+  componentDidMount() {
+    fetchProducts();
+  }
+  handleClick = (id) => {
+      this.props.AddToCart(id)
+  }
+
   render() {
+    const { products } = this.props;
+    const randomItem = products[Math.floor(Math.random() * products.length)];
+    const arr = [];
+    const arrr = arr.push(randomItem);
+
     return (
-      <section className="module module-small-bottom aya">
-        <div className="container">
-          <div className="row">
-            <div className="col-sm-6 col-sm-offset-3">
-              <h2 className="module-title font-alt">Exclusive products</h2>
-              <div className="module-subtitle font-serif">Special category of products</div>
-            </div>
-          </div>
-          <div className="row">
-            <div
-              className="owl-carousel text-center"
-              data-items="24"
-              data-pagination="true"
-              data-navigation="false"
-              data-rtl="false"
-            >
-              <div className="owl-item">
-                <div className="col-sm-12">
-                  <div className="ex-product">
-                    <Link to="https://tempwp.orderwebsitenow.com/product/patient-ninja/">
-                      <img
-                        width="262"
-                        height="328"
-                        src="https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/hoodie_3_front-262x328.jpg"
-                        className="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
-                        alt=""
-                        srcSet="https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/hoodie_3_front-262x328.jpg 262w, https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/hoodie_3_front-58x72.jpg 58w"
-                        sizes="(max-width: 262px) 100vw, 262px"
-                      />
-                    </Link>
-                    <h4 className="shop-item-title font-alt">
-                      <Link
-                        to="https://tempwp.orderwebsitenow.com/product/patient-ninja/"
-                      >
-                        Patient Ninja
-                      </Link>
-                    </h4>
-                    <span
-                      className="woocommerce-Price-amount amount"
-                    >
-                      <span
-                        className="woocommerce-Price-currencySymbol"
-                      >
-                         AMD
-                      </span>
-                         35.00
-                    </span>
+      <div className="container">
+        <section className="up-sells upsells products" >
+          <h2>You may also like…</h2>
+          {arr.length ? arr.map(p => (
+            <ul className="products columns-3">
+              <li  style={{  marginLeft:"450px" }} className="product type-product post-27 status-publish first instock product_cat-clothing product_cat-hoodies has-post-thumbnail shipping-taxable purchasable product-type-simple">
+                <div className="prod-img-wrap" >
+                  {p.images[0]?
+                  <img
+                    width="262"
+                    height="328"
+                    alt={p.images[0].alt}
+                    src={p.images[0].src}
+                    className="attachment-shop_catalog size-shop_catalog wp-post-image"/> :''}
+                  {p.images[1] ? (
+                    <img
+                      width="262"
+                      height="328"
+                      alt={p.images[1].alt}
+                      src={p.images[1].src}
+                      className="attachment-shop_catalog size-shop_catalog"/>
+                  ) : null}
+                  <div className="product-button-wrap">
+                    <div className="add-to-cart-button-wrap">
+                      <button
+                        onClick={() => { this.handleClick(p.id); }}
+                        data-quantity="1"
+                        className="button product_type_simple add_to_cart_button ajax_add_to_cart"
+                        data-product_id="27"
+                        data-product_sku="HOODIE-HAPPY-NINJA"
+                        aria-label="Add “Happy Ninja” to your cart"
+                        rel="nofollow">
+Add to cart
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="owl-item">
-                <div className="col-sm-12">
-                  <div className="ex-product">
-                    <Link to="https://tempwp.orderwebsitenow.com/product/ship-your-idea/">
-                      <img
-                        width="262"
-                        height="328"
-                        src="https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/poster_1_up-262x328.jpg"
-                        className="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
-                        alt=""
-                        srcSet="https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/poster_1_up-262x328.jpg 262w, https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/poster_1_up-58x72.jpg 58w"
-                        sizes="(max-width: 262px) 100vw, 262px"
-                      />
-                    </Link>
-                    <h4 className="shop-item-title font-alt">
-                      <Link
-                        to="https://tempwp.orderwebsitenow.com/product/ship-your-idea/"
-                      >
-                         Ship Your Idea
-                      </Link>
-                    </h4>
-                    <span
-                      className="woocommerce-Price-amount amount"
-                    >
-                      <span
-                        className="woocommerce-Price-currencySymbol"
-                      >
-                           AMD
-                      </span>
-                          15.00
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="owl-item">
-                <div className="col-sm-12">
-                  <div className="ex-product">
-                    <Link to="https://tempwp.orderwebsitenow.com/product/flying-ninja/">
-                      <img
-                        width="262"
-                        height="328"
-                        src="https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/poster_2_up-262x328.jpg"
-                        className="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
-                        alt=""
-                        srcSet="https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/poster_2_up-262x328.jpg 262w, https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/poster_2_up-58x72.jpg 58w"
-                        sizes="(max-width: 262px) 100vw, 262px"
-                      />
-                    </Link>
-                    <h4 className="shop-item-title font-alt">
-                      <Link
-                        to="https://tempwp.orderwebsitenow.com/product/flying-ninja/"
-                      >
-                          Flying Ninja
-                      </Link>
-                    </h4>
-                    <del>
-                      <span className="woocommerce-Price-amount amount">
-                        <span
-                          className="woocommerce-Price-currencySymbol"
-                        >
-                           AMD
-                        </span>
-                            15.00
-                      </span>
-                    </del>
-                    <ins>
-                      <span className="woocommerce-Price-amount amount">
-                        <span
-                          className="woocommerce-Price-currencySymbol"
-                        >
-                            AMD
-                        </span>
-                            12.00
-                      </span>
-                    </ins>
-                  </div>
-                </div>
-              </div>
-              <div className="owl-item">
-                <div className="col-sm-12">
-                  <div className="ex-product">
-                    <Link to="https://tempwp.orderwebsitenow.com/product/premium-quality/">
-                      <img
-                        width="262"
-                        height="328"
-                        src="https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/poster_3_up-262x328.jpg"
-                        className="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
-                        alt=""
-                        srcSet="https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/poster_3_up-262x328.jpg 262w, https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/poster_3_up-58x72.jpg 58w"
-                        sizes="(max-width: 262px) 100vw, 262px"
-                      />
-                    </Link>
-                    <h4 className="shop-item-title font-alt">
-                      <Link
-                        to="https://tempwp.orderwebsitenow.com/product/premium-quality/"
-                      >
-                        Premium Quality
-                      </Link>
-                    </h4>
-                    <del>
-                      <span className="woocommerce-Price-amount amount">
-                        <span
-                          className="woocommerce-Price-currencySymbol"
-                        >
-                           AMD
-                        </span>
-                        15.00
-                      </span>
-                    </del>
-                    <ins>
-                      <span className="woocommerce-Price-amount amount">
-                        <span
-                          className="woocommerce-Price-currencySymbol"
-                        >
-                           AMD
-                        </span>
-                          12.00
-                      </span>
-                    </ins>
-                  </div>
-                </div>
-              </div>
-              <div className="owl-item">
-                <div className="col-sm-12">
-                  <div className="ex-product">
-                    <Link to="https://tempwp.orderwebsitenow.com/product/woo-ninja/">
-                      <img
-                        width="262"
-                        height="328"
-                        src="https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/poster_4_up-262x328.jpg"
-                        className="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
-                        alt=""
-                        srcSet="https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/poster_4_up-262x328.jpg 262w, https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/poster_4_up-58x72.jpg 58w"
-                        sizes="(max-width: 262px) 100vw, 262px"
-                      />
-                    </Link>
-                    <h4 className="shop-item-title font-alt">
-                      <Link
-                        to="https://tempwp.orderwebsitenow.com/product/woo-ninja/"
-                      >
-                        Woo Ninja
-                      </Link>
-                    </h4>
-                    <span
-                      className="woocommerce-Price-amount amount"
-                    >
-                      <span
-                        className="woocommerce-Price-currencySymbol"
-                      >
-                        AMD
-                      </span>
-                        15.00
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="owl-item">
-                <div className="col-sm-12">
-                  <div className="ex-product">
-                    <Link to="https://tempwp.orderwebsitenow.com/product/woo-logo/">
-                      <img
-                        width="262"
-                        height="328"
-                        src="https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/poster_5_up-262x328.jpg"
-                        className="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
-                        alt=""
-                        srcSet="https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/poster_5_up-262x328.jpg 262w, https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/poster_5_up-58x72.jpg 58w"
-                        sizes="(max-width: 262px) 100vw, 262px"
-                      />
-                    </Link>
-                    <h4 className="shop-item-title font-alt">
-                      <Link
-                        to="https://tempwp.orderwebsitenow.com/product/woo-logo/"
-                      >
-                        Woo Logo
-                      </Link>
-                    </h4>
-                    <span
-                      className="woocommerce-Price-amount amount"
-                    >
-                      <span
-                        className="woocommerce-Price-currencySymbol"
-                      >
-                          AMD
-                      </span>
-                          15.00
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="owl-item">
-                <div className="col-sm-12">
-                  <div className="ex-product">
-                    <Link to="https://tempwp.orderwebsitenow.com/product/woo-album-4/">
-                      <img
-                        width="262"
-                        height="328"
-                        src="https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/cd_5_angle-262x328.jpg"
-                        className="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
-                        alt=""
-                        srcSet="https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/cd_5_angle-262x328.jpg 262w, https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/cd_5_angle-58x72.jpg 58w"
-                        sizes="(max-width: 262px) 100vw, 262px"
-                      />
-                    </Link>
-                    <h4 className="shop-item-title font-alt">
-                      <Link
-                        to="https://tempwp.orderwebsitenow.com/product/woo-album-4/"
-                      >
-                        Woo Album #4
-                      </Link>
-                    </h4>
-                    <span
-                      className="woocommerce-Price-amount amount"
-                    >
-                      <span
-                        className="woocommerce-Price-currencySymbol"
-                      >
-                        AMD
-                      </span>
-                         9.00
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="owl-item">
-                <div className="col-sm-12">
-                  <div className="ex-product">
-                    <Link to="https://tempwp.orderwebsitenow.com/product/woo-singles/">
-                      <img
-                        width="262"
-                        height="328"
-                        src="https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/cd_6_flat-262x328.jpg"
-                        className="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
-                        alt=""
-                        srcSet="https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/cd_6_flat-262x328.jpg 262w, https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/cd_6_flat-58x72.jpg 58w"
-                        sizes="(max-width: 262px) 100vw, 262px"
-                      />
-                    </Link>
-                    <h4 className="shop-item-title font-alt">
-                      <Link
-                        to="https://tempwp.orderwebsitenow.com/product/woo-singles/"
-                      >
-                         Woo Singles
-                      </Link>
-                    </h4>
-                    <span
-                      className="woocommerce-Price-amount amount"
-                    >
-                      <span
-                        className="woocommerce-Price-currencySymbol"
-                      >
-                          AMD
-                      </span>
-                          2.00
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="owl-item">
-                <div className="col-sm-12">
-                  <div className="ex-product">
-                    <Link
-                      to="https://tempwp.orderwebsitenow.com/product/ninja-silhouette/"
-                    >
-                      <img
-                        width="262"
-                        height="328"
-                        src="https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/hoodie_5_front-262x328.jpg"
-                        className="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
-                        alt=""
-                        srcSet="https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/hoodie_5_front-262x328.jpg 262w, https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/hoodie_5_front-58x72.jpg 58w"
-                        sizes="(max-width: 262px) 100vw, 262px"
-                      />
-                    </Link>
-                    <h4 className="shop-item-title font-alt">
-                      <Link
-                        to="https://tempwp.orderwebsitenow.com/product/ninja-silhouette/"
-                      >
-                        Ninja Silhouette
-                      </Link>
-                    </h4>
-                    <span
-                      className="woocommerce-Price-amount amount"
-                    >
-                      <span
-                        className="woocommerce-Price-currencySymbol"
-                      >
-                        AMD
-                      </span>
-                        30.00
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="owl-item">
-                <div className="col-sm-12">
-                  <div className="ex-product">
-                    <Link to="https://tempwp.orderwebsitenow.com/product/happy-ninja/">
-                      <img
-                        width="262"
-                        height="328"
-                        src="https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/hoodie_4_front-262x328.jpg"
-                        className="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
-                        alt=""
-                        srcSet="https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/hoodie_4_front-262x328.jpg 262w, https://tempwp.orderwebsitenow.com/wp-content/uploads/2019/05/hoodie_4_front-58x72.jpg 58w"
-                        sizes="(max-width: 262px) 100vw, 262px"
-                      />
-                    </Link>
-                    <h4 className="shop-item-title font-alt">
-                      <Link
-                        to="https://tempwp.orderwebsitenow.com/product/happy-ninja/"
-                      >
-                        Happy Ninja
-                      </Link>
-                    </h4>
-                    <span
-                      className="woocommerce-Price-amount amount"
-                    >
-                      <span
-                        className="woocommerce-Price-currencySymbol"
-                      >
-                        AMD
-                      </span>
-                        35.00
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+                <h2 className="woocommerce-loop-product__title">
+                  {p.name}
+                </h2>
+                {p.on_sale
+                  ? <span className="onsale">Sale!</span>
+                  : null}
+                <span className="price">
+                  <span className="woocommerce-Price-amount amount">
+                    <span className="woocommerce-Price-currencySymbol">AMD</span>
+                    {parseFloat(p.regular_price).toFixed(2)}
+                  </span>
+                </span>
+              </li>
+            </ul>
+          )) : null}
+        </section>
+      </div>
     );
   }
 }
 
-export default ExclusiveProducts;
+const mapStateToProps = state => ({
+  products: state.product.products,
+  page: state.product.page,
+  prod: state.RangeFiltr.prod,
+});
+
+const mapDispatchToProps = {
+  AddToCart,
+  fetchProducts,
+};
+const Container = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(ExclusiveProducts);
+
+export default Container;
