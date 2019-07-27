@@ -70,12 +70,10 @@ class Home extends Component {
                 {products.map(p => (
                   <li
                     key={p.id}
-                    className="product type-product post-60 status-publish instock product_cat-posters has-post-thumbnail sale shipping-taxable purchasable product-type-simple"
-                  >
+                    className="product type-product post-60 status-publish instock product_cat-posters has-post-thumbnail sale shipping-taxable purchasable product-type-simple">
                     <ProductItem data={p} />
                   </li>
                 ))}
-
               </ul>
               <div className="row">
                 <div className="col-sm-12">

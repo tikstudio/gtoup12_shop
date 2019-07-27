@@ -8,7 +8,6 @@ export function fetchProducts(data) {
   };
 }
 
-
 export const FETCH_SINGLE_PRODUCT = 'FETCH_SINGLE_PRODUCT';
 export const FETCH_SINGLE_SUCCESS = 'FETCH_SINGLE_SUCCESS';
 export const FETCH_SINGLE_FAIL = 'FETCH_SINGLE_FAIL';
@@ -41,9 +40,6 @@ export function fetchCheapAndExpensiveProducts() {
     type: FETCH_PRICE_REQUEST, payload: {},
   };
 }
-
-
-// color
 
 export const FETCH_FILTRE_COLOR_REQUEST = 'FETCH_FILTRE_COLOR_REQUEST';
 export const FETCH_FILTRE_COLOR_SUCCESS = 'FETCH_FILTRE_COLOR_SUCCESS';

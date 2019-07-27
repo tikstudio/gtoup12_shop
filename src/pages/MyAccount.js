@@ -12,20 +12,16 @@ class MyAccount extends Component {
               <div className="row">
                 <div className="col-sm-10 col-sm-offset-1">
                   <h1 className="module-title font-alt">My account</h1>
-
-
                 </div>
               </div>
               <hr className="divider-w pt-20" />
             </div>
-
           </section>
           <section className="page-module-content module module-cart-bottom">
             <div className="container">
               <div className="row">
                 <div className="col-sm-12">
                   <div className="woocommerce" />
-
                   <article id="post-9" className="post-9 page type-page status-publish hentry">
                     <div className="entry-content">
                       <div className="woocommerce">
@@ -43,8 +39,7 @@ class MyAccount extends Component {
                             name="username"
                             id="username"
                             autoComplete="username"
-                            value=""
-                          />
+                            value=""/>
                         </p>
                           <p className="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                           <label htmlFor="password">
@@ -56,10 +51,8 @@ class MyAccount extends Component {
                             type="password"
                             name="password"
                             id="password"
-                            autoComplete="current-password"
-                          />
+                            autoComplete="current-password"/>
                         </p>
-
                           <p className="form-row">
                           <label className="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
                             <input
@@ -67,23 +60,20 @@ class MyAccount extends Component {
                               name="rememberme"
                               type="checkbox"
                               id="rememberme"
-                              value="forever"
-                            />
+                              value="forever"/>
                             <span>Remember me</span>
                           </label>
                           <input
                             type="hidden"
                             id="woocommerce-login-nonce"
                             name="woocommerce-login-nonce"
-                            value="cacbf47430"
-                          />
+                            value="cacbf47430"/>
                           <input type="hidden" name="_wp_http_referer" value="/my-account/" />
                           <button
                             type="submit"
                             className="woocommerce-button button woocommerce-form-login__submit"
                             name="login"
-                            value="Log in"
-                          >
+                            value="Log in">
                             Log in
                           </button>
                         </p>
@@ -93,11 +83,9 @@ class MyAccount extends Component {
                         </form>
                       </div>
                     </div>
-
                   </article>
                 </div>
               </div>
-
             </div>
           </section>
         </div>

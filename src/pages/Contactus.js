@@ -8,7 +8,6 @@ class ContactUs extends Component {
       <Wrapper headerImage={`${SITE_URL}/wp-content/themes/shop-isle/assets/images/header.jpg`}>
         <section className="module">
           <div className="container">
-
             <div className="row">
               <div className="col-xs-12 col-sm-12 contact-page-content">
                 <div className="wpforms-container wpforms-container-full" id="wpforms-104">
@@ -58,8 +57,6 @@ class ContactUs extends Component {
                       <button type="submit" name="wpforms[submit]" className="wpforms-submit " id="wpforms-submit-104"
                               value="wpforms-submit" data-alt-text="Sending...">Submit
                       </button></form></div>
-
-
                 </div>
               </div>
             </div>

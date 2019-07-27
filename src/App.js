@@ -14,7 +14,7 @@ import Front from "./pages/Front";
 class App extends Component {
   static defaultProps = {
     message: '',
-  };
+  } ;
 
   render() {
     return (

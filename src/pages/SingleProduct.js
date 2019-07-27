@@ -25,9 +25,6 @@ class SingleProduct extends Component {
     this.props.fetchSingleProduct(slug);
   }
 
-  // sendId = (id) => {
-  //   this.props.AddToCart(id);
-  // }
   showimage = ()=>{
     this.setState((prevState)=>({showimage: !prevState.showimage}))
   }
@@ -85,12 +82,9 @@ class SingleProduct extends Component {
                       alt={single.images[0].alt}
                       src={single.images[0].src}
                       className="flex-active"
-                      draggable="false"
-                    />
+                      draggable="false"/>
                     </button>
-
                   </li>
-
                   <li style={{marginLeft: '200px', marginTop: '-156px'}}>
                     <button onClick={this.showimage2}>
                     <img
@@ -99,12 +93,9 @@ class SingleProduct extends Component {
                       alt={single.images[1].alt}
                       src={single.images[1].src}
                       className="flex-active"
-                      draggable="false"
-                    />
+                      draggable="false"/>
                     </button>
                   </li>
-
-
                 </ol>
                 {this.state.showimage?
                   <div>
@@ -116,7 +107,6 @@ class SingleProduct extends Component {
                     style={{position:'absolute',height:'600px',width:'600px',marginTop:'-800px',marginLeft:'300px'}}
                   />
                   </div>
-
                   :null}
                  {this.state.showimage2 ?
                    <div>
@@ -130,7 +120,6 @@ class SingleProduct extends Component {
                    </div>
                     :null}
               </nav>
-
               <div
                 className="flex-viewport"
                 style={{
@@ -138,8 +127,7 @@ class SingleProduct extends Component {
                   height: '555px',
                   marginLeft: '650px ',
                   marginTop: '-700px',
-                }}
-              >
+                }}>
                 <h1 className="product_title entry-title">{single.name}</h1>
                 <div className="summary entry-summary">
                   <span className="price">
@@ -162,9 +150,7 @@ class SingleProduct extends Component {
 AMD
                 </span>
                   {parseFloat(single.price).toFixed(2)}
-              </span>
-              )
-              : null}
+              </span>) : null}
           </ins>
         </span>
                   <div className="woocommerce-product-details__short-description">
@@ -218,7 +204,6 @@ AMD
                         className="woocommerce-variation-add-to-cart variations_button woocommerce-variation-add-to-cart-enabled">
                         <div className="quantity" style={{marginLeft: '60px', marginTop: '40px', height: "50px"}}>
                           <input
-
                             type="number"
                             id="quantity_5d112eaf830c9"
                             className="input-text qty text"
@@ -229,18 +214,14 @@ AMD
                             // value="1"
                             title="Qty"
                             size="4"
-                            inputMode="numeric"
-                          />
+                            inputMode="numeric"/>
                         </div>
                         <button style={{
                           width: '300px',
                           height: "50px",
                           marginLeft: '60px',
-                          marginTop: '20px',
-                        }}
-                                className="single_add_to_cart_button button alt"
-                                // onClick={this.sendId(single.id)}
-                        >
+                          marginTop: '20px',}}
+                                className="single_add_to_cart_button button alt">
                           Add to cart
                         </button>
                         <input type="hidden" name="add-to-cart" value="24"/>
@@ -253,19 +234,15 @@ AMD
 SKU:
                         <span
                           className="sku"
-                          data-o_content="HOODIE-SHIP-YOUR-IDEA"
-                        >
+                          data-o_content="HOODIE-SHIP-YOUR-IDEA">
                           {single.sku}
                         </span>
                       </span>
                   </div>
                 </div>
-
               </div>
             </div>
             <div className="summary entry-summary"/>
-
-
             <div  style={{marginTop:'150px'}} className="woocommerce-tabs wc-tabs-wrapper">
               <ul className="tabs wc-tabs" role="tablist">
                 <li className="description_tab active" id="tab-title-description" role="tab"
@@ -273,19 +250,15 @@ SKU:
                   <Link
                     to="https://tempwp.orderwebsitenow.com/product/happy-ninja-2/#tab-description">Description</Link>
                 </li>
-
               </ul>
               <div
                 className="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab"
                 id="tab-description"
                 role="tabpanel"
                 aria-labelledby="tab-title-description"
-                style={{display: 'block'}}
-              >
-
+                style={{display: 'block'}}>
                 <h2 >Description</h2>
                 <div dangerouslySetInnerHTML={{__html: single.description}}/>
-
               </div>
             </div>
           </div>
@@ -295,8 +268,6 @@ SKU:
           <hr className="divider-w"/>
         </section>
       </Wrapper>
-
-
     );
   }
 }

@@ -11,7 +11,6 @@ class PriceRange extends Component {
     super(props);
     const { min, max } = props.price;
     const url = new URL(window.location.href);
-
     this.state = {
       value: {
         min : parseInt(url.searchParams.get('min')) || min,
@@ -32,10 +31,8 @@ class PriceRange extends Component {
     this.setState({ value });
   }
 
-
   render() {
     const { min, max } = this.props.price;
-
     return (
       <div className="widget price mb-50">
         <div className="widget-desc">
@@ -46,8 +43,7 @@ class PriceRange extends Component {
               value={this.state.value}
               formatLabel={() => ''}
               onChange={this.handleChange}
-              onChangeComplete={this.apply}
-            />
+              onChangeComplete={this.apply}/>
             <div className="price_label">
               <span className="from">
                 Price: AMD

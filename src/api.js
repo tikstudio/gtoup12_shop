@@ -83,7 +83,6 @@ export function cartCountTotal() {
 
 
 export function updateCartItem(cart_item_key, quantity) {
-  // const s = qs({ key, quantity });
   return axios.post('/wp-json/wc/v2/cart/cart-item', {cart_item_key, quantity});
 }
 

@@ -14,7 +14,7 @@ class ExclusiveProducts extends Component {
     fetchProducts();
   }
   handleClick = (id) => {
-      this.props.AddToCart(id);
+      this.props.AddToCart(id)
   }
 
   render() {

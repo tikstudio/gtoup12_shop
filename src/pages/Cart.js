@@ -40,14 +40,12 @@ class Cart extends Component {
     this.props.cartItemUp(key, quantity);
   }
 
-
   render() {
     const cartProducts = Object.values(this.props.cartProducts);
     const { cartTotal } = this.props;
     const arr = [];
     const arrr = arr.push(cartTotal);
     const cartUp =this.props
-
 
     return (
       <Wrapper headerImage={false}>

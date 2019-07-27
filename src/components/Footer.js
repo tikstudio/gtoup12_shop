@@ -6,14 +6,10 @@ class Footer extends Component {
     return (
 
       <footer
-        className="footer bg-dark"
-      >
-
+        className="footer bg-dark">
         <hr className="divider-d" />
         <div className="container">
-
           <div className="row">
-
             <div className="col-sm-6">
               <p className="shop-isle-poweredby-box">
                 <Link className="shop-isle-poweredby"
@@ -47,7 +43,6 @@ WordPress
           </div>
         </div>
       </footer>
-
     );
   }
 }

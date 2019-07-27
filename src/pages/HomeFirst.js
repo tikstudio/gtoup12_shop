@@ -7,8 +7,6 @@ class HomeFirst extends Component {
         return (
             <Wrapper headerImage={`${SITE_URL}/wp-content/themes/shop-isle/assets/images/header.jpg`}>
 
-<div>sikkkkkkkkkkkkkkkkkkkk</div>
-
             </Wrapper>
 
 

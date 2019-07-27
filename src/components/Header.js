@@ -38,21 +38,16 @@ class Header extends Component {
   render() {
     const { cartCountItem } = this.props;
     const {findDatas}=this.props
-    console.log(findDatas,'imsssss')
     const inputText = this.state
-   // console.log(inputText)
     return (
       <div>
 
         <header className="header ">
           <nav
             className="navbar navbar-custom navbar-fixed-top  navbar-color-on-scroll navbar-transparent"
-            role="navigation"
-          >
-
+            role="navigation">
             <div className="container">
               <div className="header-container">
-
                 <div className="navbar-header">
                   <div className="shop_isle_header_title">
                     <div className="shop-isle-header-title-inner">
@@ -122,8 +117,6 @@ class Header extends Component {
                       </form>
                         <button onClick={this.hedleClick}
                           style={{marginTop:'-30px',position:'absolute',marginLeft:'180px'}}>FIND</button>
-
-
                         <div>
                           {findDatas.length?
                              findDatas.map(it=>(
@@ -176,17 +169,8 @@ AMD
               )
               : null}
           </ins>
-        </span>
-                               </Link>
-
-
-
-                             ))
-
-
-
+        </span></Link>))
                             :<div style={{width:'150px',height:'150px',color:'white',marginLeft:'170px',marginTop:'150px',fontSize:'20px'}}>"is Empty"</div>}
-
                         </div>
                       </div>
                       : null }

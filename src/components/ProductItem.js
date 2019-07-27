@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {AddToCart, cartCountFetch} from '../store/actions/product';
 
-
 class ProductItem extends Component {
   constructor(props) {
     super(props);
